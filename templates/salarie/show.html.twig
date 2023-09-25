@@ -1,0 +1,123 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Salarie{% endblock %}
+
+{% block body %}
+
+    <div class="wrapper site-min-height">
+        <!-- page start-->
+        <div class="chat-room mt">
+            <div class="col-lg-12">
+                <aside class="mid-side">
+                    <div class="chat-room-head">
+                        <h3>Profil</h3>
+
+                        <div class="col-md-4 centered">
+                            <div class="profile-pic">
+                                <p><img src="{{ asset('uploads/images/' ~ salarie.photo) }}"></p>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="group-row">
+                        <div class="pull-right">
+                            <div class="col-lg-3">
+<br>
+                            <button class="btn btn-default" onclick="window.print();"><i class="fa fa-print btn-lg btn-theme02"> Imprimer</i></button>
+                        </div>
+                        </div>
+                    </div>
+                    <section class="content invoice">
+
+                    <div class="group-rom">
+                        <div class="first-part odd">id</div>
+                        <div class="second-part">{{ salarie.id }}</div>
+
+                    </div>
+
+                    <div class="group-rom">
+                        <div class="first-part odd">Matricule</div>
+                        <div class="second-part">{{ salarie.matricule }}</div>
+
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">CIN</div>
+                        <div class="second-part">{{salarie.cin}}</div>
+
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">N_Caisse_Nationale</div>
+                        <div class="second-part">{{ salarie.getNCaisseNationale}}</div>
+
+                    </div>
+
+                    <div class="group-rom">
+                        <div class="first-part odd">Nom</div>
+                        <div class="second-part">{{salarie.nom }}</div>
+
+                    </div>
+
+                    <div class="group-rom">
+                        <div class="first-part odd">Prenom</div>
+                        <div class="second-part">{{ salarie.prenom }}</div>
+
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">numéro de téléphone <i class="fa fa-phone" aria-hidden="true"></i></div>
+                        <div class="second-part">{{ salarie.tel}}</div>
+                    </div>
+
+                    <div class="group-rom">
+                        <div class="first-part odd">Adress  <i class="fa fa-home" aria-hidden="true"></i></div>
+                        <div class="second-part">{{ salarie.adress }}</div>
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">Date de naissance  <i class="fa fa-birthday-cake" aria-hidden="true"></i></div>
+                        <div class="second-part">{{ salarie.dateDeNaissance ? salarie.dateDeNaissance|date('Y-m-d') : '' }}</div>
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">Genre  <i class="fa fa-birthday-cake" aria-hidden="true"></i></div>
+                        <div class="second-part">{{ salarie.genre }}</div>
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">Statut </div>
+                        <div class="second-part">{{ salarie.statut }}</div>
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">Poste </div>
+                        <div class="second-part"> {{ salarie.idpt.getNom}}</div>
+                    </div>
+
+
+                    </section>
+                    <div class="group-rom ">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-3">
+                                <br> <br>
+                                {%  if is_granted('ROLE_RHSE') %}
+                                {{ include('salarie/_delete_form.html.twig') }}
+                                {%  endif %}
+
+                            </div>
+
+                            <div class="col-lg-3">
+                                <br> <br>
+                                <button type="button" class="btn btn-dark btn-primary  btn-lg mb-1 mx-auto z-depth-5 btn-rounded ">
+                                    <a href="{{ path('salarie_index') }}"class= text-white title="retour a la liste"><i class="fa fa-reply"></i> Retour a la liste </a></button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+

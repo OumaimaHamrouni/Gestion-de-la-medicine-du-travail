@@ -1,0 +1,120 @@
+
+
+
+{% extends 'base.html.twig' %}
+
+{% block title %}visite{% endblock %}
+
+{% block body %}
+
+    <div class="wrapper site-min-height">
+        <!-- page start-->
+        <div class="chat-room mt">
+            <div class="col-lg-12">
+                <aside class="mid-side">
+                    <div class="chat-room-head centered">
+                        <br>
+                        <h1> {{ visite.type }} </h1>
+                        <div class="form-group">
+                            <div class="pull-right col-lg-1">
+                                <button type="button" class="btn btn-primary  btn-dark btn-lg color-block mb-1 mx-auto z-depth-1 btn-rounded ">
+                                    <a href="{{ path('visite_index') }}" class="text-white" title="retour à la liste"><i class="fa fa-reply"></i></a></button>
+
+                            </div>
+                            <br>
+                        </div>
+                        <div class="col-md-4 centered">
+                            <div class="profile-pic">
+                                <p><img src="{{ asset('uploads/images/' ~ visite.salarie.getphoto) }}"></p>
+
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+                    <div class="group-rom">
+                        <div class="first-part odd">Id</div>
+                        <div class="second-part">{{ visite.id }}</div>
+
+                    </div>
+
+                    <div class="group-rom">
+                        <div class="first-part odd">Matricule</div>
+                        <div class="second-part">{{ visite.salarie.getMatricule }}</div>
+
+                    </div>
+
+                    <div class="group-rom">
+                        <div class="first-part odd">Nom</div>
+                        <div class="second-part">{{ visite.salarie.getNom }}</div>
+
+                    </div>
+
+                    <div class="group-rom">
+                        <div class="first-part odd">Prenom</div>
+                        <div class="second-part">{{ visite.salarie.getPrenom }}</div>
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">Genre</div>
+                        <div class="second-part">{{ visite.salarie.getGenre }}</div>
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">Date de naissance</div>
+                        <div class="second-part">{{ visite.salarie.dateDeNaissance ? visite.salarie.dateDeNaissance|date('Y-m-d') : '' }}</div>
+
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">Poste </div>
+                        <div class="second-part">{{ visite.salarie.getIDPT.getNom }}</div>
+                    </div>
+
+                    <div class="group-rom">
+                        <div class="first-part odd">Type de visite </div>
+                        <div class="second-part">{{ visite.type }}</div>
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">Date de visite </div>
+                        <div class="second-part">{{ visite.date ? visite.date|date('Y-m-d H:i:s') : '' }}</div>
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd"> Date de prochaine visite </div>
+                        <div class="second-part">{{ visite.dateProchaine ? visite.dateProchaine|date('Y-m-d H:i:s') : '' }}</div>
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">Observation </div>
+                        <div class="second-part">{{ visite.ido.observation}} </div>
+        </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">Remarque </div>
+                        <div class="second-part">{{ visite.ido.remarque}}</div>
+                    </div>
+
+                    <div class="group-rom">
+                        <div class="first-part odd">Les examens médicaux </div>
+                        <div class="second-part">
+                            <ul>
+                                {% for i in visite.ido.EXEMENCOMP %}
+                                    <li>{{ i }}</li>
+                                {% endfor %}
+                            </ul></div>
+                    </div>
+
+                </aside>
+
+
+            </div></div>
+    </div>
+
+    </div>
+
+
+
+{% endblock %}
+

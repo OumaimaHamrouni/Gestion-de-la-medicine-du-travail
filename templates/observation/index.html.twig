@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Observation index{% endblock %}
+
+{% block body %}
+    <h1>Observation index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+
+                <th>Observation</th>
+                <th>Remarque</th>
+
+                <th>Exemen_comp</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for observation in observations %}
+            <tr>
+                <td>{{ observation.id }}</td>
+
+                <td>{{ observation.observation }}</td>
+                <td>{{ observation.remarque }}</td>
+
+                <td>{{ observation.exemenComp }}</td>
+                <td>
+                    <a href="{{ path('observation_show', {'id': observation.id}) }}">show</a>
+                    <a href="{{ path('observation_edit', {'id': observation.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('observation_new') }}">Create new</a>
+{% endblock %}

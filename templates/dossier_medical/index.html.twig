@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}DossierMedical index{% endblock %}
+
+{% block body %}
+
+
+
+
+    <div class="row mt">
+        <div class="col-md-12">
+
+            <div class="content-panel">
+                <table class="table table-striped table-advance table-hover">
+
+                    <div class="chat-room-head ">
+
+                        <h2><i class="fa fa-angle-right"></i> les dossiers  medical </h2>
+
+
+                    </div>
+
+                    <br>
+    {%  if is_granted('ROLE_MEDECIN') %}
+                    <div class="col-lg-3">
+                        <button type="button" class="btn btn-primary btn-success btn-lg color-block mb-2 mx-12 z-depth-1 btn-rounded">
+                            <a href="{{ path('dossier_medical_new') }}" ><i class="text-white fa fa-plus">  dossier_medical </i> </a></button>
+                    </div>
+        {%  endif %}
+                    <thead>
+                    <tr>
+                        <th>matricule</th>
+                        <th> photo</th>
+                        <th>Prénom</th>
+                        <th>Nom de salarie</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for dossier_medical in dossier_medicals %}
+                        <tr>
+
+
+
+                        <td>{{ dossier_medical.ids.getMatricule}}</td>
+
+                        <td>
+                            <img  border="10"   src ="{{ asset('uploads/images/' ~ dossier_medical.ids.getphoto) }}" alt =""  width="50" height="70" >
+                        </td>
+                        <td>{{ dossier_medical.ids.getPrenom}}</td>
+                        <td>{{ dossier_medical.ids.getNom}}</td>
+                        <td>
+                            <div class="row mt">
+
+                                <form class="form-inline" role="form">
+                                    <div class="form-group">
+                                        <div class="col-lg-3">
+                                        <button type="button"class="btn btn-theme02">
+
+                                            <a href="{{ path('dossier_medical_show', {'id': dossier_medical.id}) }}" title="Affichier" ><i class="text-white fa fa-info-circle "></i> </a></button>
+
+                                    </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lg-3">
+
+                                        <button type="button"class="btn btn-info">
+                                            <a href="{{ path('dossier_medical_edit', {'id': dossier_medical.id}) }}"title="Modifier" ><i class="text-white fa fa-pencil "></i></a></button>
+                                    </div></div>
+
+                                </form>
+                            </div>
+                        </td>
+
+
+                    {% else %}
+                        <tr>
+                            <td colspan="9">no records found</td>
+                        </tr>
+                    {% endfor %}
+
+
+                    </tbody>
+                </table>
+
+            </div>
+
+            <!-- /content-panel -->
+        </div>
+        <!-- /col-md-12 -->
+    </div>
+
+{% endblock %}

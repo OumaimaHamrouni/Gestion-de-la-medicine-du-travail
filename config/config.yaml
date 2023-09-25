@@ -1,0 +1,7 @@
+fos_user:
+    #...
+    registration:
+        confirmation:
+            from_email:
+                address:        registration@example.com
+                sender_name:    Demo Registration

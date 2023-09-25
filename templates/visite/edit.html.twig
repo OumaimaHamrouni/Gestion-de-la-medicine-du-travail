@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit PosteDeTravail{% endblock %}
+
+{% block body %}
+<div class="wrapper site-min-height">
+    <!-- page start-->
+    <div class="chat-room mt">
+        <div class="col-lg-12">
+            <aside class="mid-side">
+                <div class="chat-room-head">
+
+                    {{ form_start(form ,{'action': path('visite_edit', {'id': visite.id})}) }}
+
+                    <h1>visite de reprise </h1>
+                </div>
+                <div class="group-rom">
+                    <div class="first-part odd">matricule de salarie</div>
+
+                    <div class="second-part">  {{ form_widget(form.salarie, {'attr':{'class':'form-control'}}) }}</div>
+                </div>
+                <div class="group-rom">
+                    <div class="first-part odd">date de visite</div>
+
+                    <div class="second-part">  {{ form_widget(form.date, {'attr':{'class':'form-control'}}) }}</div>
+                </div>
+                <div class="group-rom">
+                    <div class="first-part odd">Aptitude</div>
+
+                    <div class="second-part">  {{ form_widget(form.aptitude, {'attr':{'class':'form-control'}}) }}</div>
+                </div>
+                <div class="group-rom">
+                    <div class="first-part odd">Observation</div>
+
+                    <div class="second-part">  {{ form_widget(form2.observation, {'attr':{'class':'form-control'}}) }}</div>
+                </div>
+                <div class="group-rom">
+                    <div class="first-part odd">remarque</div>
+
+                    <div class="second-part">  {{ form_widget(form2.remarque, {'attr':{'class':'form-control'}}) }}</div>
+                </div>
+
+                <div class="group-rom">
+                    <div class="first-part odd"> Date de prochaine visite</div>
+
+                    <div class="second-part">  {{ form_widget(form.date_prochaine, {'attr':{'class':'form-control'}}) }}</div>
+                </div>
+                <div class="group-rom">
+                    <div class="first-part odd">les examens médicaux </div>
+
+                    <div class="second-part">  {{ form_widget(form2.exemen_comp, {'attr':{'class':'form-control'}}) }}</div>
+                </div>
+
+                {{ form_widget(form) }}
+
+                {{ form_widget(form2) }}
+                <div class="row justify-content-center">
+
+                    <div class="col-lg-3">
+                        <br> <br>
+                        <button type="submit" class="btn btn-success btn-lg mb-1 mx-auto z-depth-5 btn-rounded {{ button_label|default('Modiier') }}"class= text-white title="Modifier">
+                            <i class="fa fa-check"></i> Modifier </button>
+                        <button type="button" class="btn btn-danger btn-primary  btn-lg mb-1 mx-auto z-depth-5 btn-rounded ">
+                            <a href="{{ path('visite_index') }}"class= text-white title="Annuler"><i class="fa fa-ban"></i>Annuler </a></button>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+
+    </div>
+</div>
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

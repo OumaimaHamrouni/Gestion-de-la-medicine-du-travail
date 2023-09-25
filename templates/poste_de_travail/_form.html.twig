@@ -1,0 +1,136 @@
+
+
+            <div class="wrapper site-min-height">
+                <!-- page start-->
+                <div class="chat-room mt">
+                    <div class="col-lg-12">
+                        <aside class="mid-side">
+                            <div class="chat-room-head">
+                                {{ form_start(form  , {'action': path('poste_de_travail_new')}) }}
+
+                                <h1>nouveau Poste</h1>
+                            </div>
+
+
+                            <div class="group-rom">
+                                <div class="first-part odd">Refrence   <span class="text-danger">*</span></div>
+                                <div class="second-part"> {{ form_widget(form.refrence, {'attr':{'class':'form-control','placeholder': "refrence"}}) }}</div>
+
+                            </div>
+                            <div class="group-rom">
+                                <div class="first-part odd">Nom  <span class="text-danger">*</span></div>
+                                <div class="second-part"> {{ form_widget(form.nom, {'attr':{'class':'form-control','placeholder': "Nom du poste"}}) }}</div>
+
+                            </div>
+                            <div class="group-rom">
+                                <div class="first-part odd">Horaire  <i class="fa fa-clock-o" aria-hidden="true"></i>  <span class="text-danger">*</span></div>
+                                <div class="second-part">    {{ form_widget(form.horaire) }}</div>
+                            </div>
+                            <div class="group-rom">
+                                <div class="first-part odd">Lieu   <i class="fa fa-map-marker" aria-hidden="true"></i>   <span class="text-danger">*</span></div>
+                                <div class="second-part">  {{ form_widget(form.lieu, {'attr':{'class':'form-control','placeholder': "Lieu"}}) }}</div>
+                            </div>
+
+
+                            <div class="group-rom">
+                                <div class="first-part odd">Atelier  <img src="https://img.icons8.com/windows/32/000000/maintenance.png" height="20"/></div>
+                                <div class="second-part">  {{ form_widget(form.atelier, {'attr':{'class':'form-control','placeholder': "Atelier"}}) }}</div>
+
+                            </div>
+                            <div class="group-rom">
+                                <div class="first-part odd">Exigence</div>
+                                <div class="second-part"> {{ form_widget(form.exigence, {'attr':{'class':'form-control','placeholder': "Exigence"}}) }}</div>
+                            </div>
+
+                            <div class="group-rom">
+                                <div class="first-part odd">Moyen de maitirse</div>
+                                <div class="second-part"> {{ form_widget(form.moyen_maitrise, {'attr':{'class':'form-control','placeholder': "Moyen de maitrise"}}) }}</div>
+                            </div>
+                            <div class="group-rom">
+                                <div class="first-part odd">Equipement <img src="https://img.icons8.com/windows/32/000000/hammer.png" height="18"/></div>
+                                <div class="second-part"> {{ form_widget(form.equipement, {'attr':{'class':'form-control'}}) }}</div>
+                            </div>
+                            <div class="group-rom ">
+
+                                <div class="first-part odd">Risque <i class="fa fa-exclamation-triangle"></i> <br> Frequence : <br> Evaluation :</div>
+
+
+
+                                {% for risque in risques %}
+                                {#case a cocher#}   <div class="second-part form-group col-md-2">
+                                    <input type="checkbox"  name="risque[]"  value="{{ risque.id }}">{{ risque.type }}
+                                    <br>
+                                    <select name="freq{{risque.id}}">
+                                        <option selected="selected">Choisir...</option>
+                                        <option value="1">faible</option>
+                                        <option value="2">Moyen</option>
+                                        <option value="3">Elevé</option>
+                                    </select>
+                                    <br>
+
+                                    <select name="eval{{risque.id}}" >
+                                        <option selected="selected">Choisir...</option>
+                                        <option value="1">faible</option>
+                                        <option value="2">Moyen</option>
+                                        <option value="3">Elevé</option>
+                                    </select>
+
+                                </div>
+
+                                {% endfor %}
+                            <div class="group-rom ">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-3">
+                                        <button type="submit" class="btn btn-success btn-lg mb-1 mx-auto z-depth-5 btn-rounded " value="{{ button_label|default }}"class= text-white title="Modifier">
+                                            <i class="fa fa-check"></i> Ajouter </button>
+
+
+
+
+                                    </div>
+
+                                    <div class="col-lg-3">
+                                        <button type="button" class="btn btn-danger btn-primary  btn-lg mb-1 mx-auto z-depth-5 btn-rounded ">
+                                            <a href="{{ path('poste_de_travail_index') }}"class= text-white title="Annuler"><i class="fa fa-ban"></i>Annuler </a></button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            </div>
+                        </aside>
+
+                    </div>
+                </div>
+            </div>
+            {{ form_end(form) }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,98 @@
+
+<div class="card">
+    <div class="card-body">
+        {{ form_start(form ,{'action': path('salarie_edit', {'id': salarie.id})}) }}
+
+
+        <div class="form-group row">
+            <label class="col-lg-4 col-form-label" for="v"> Date <span class="text-success"> </span>
+            </label>
+            <div class="col-lg-7">
+            {{ form_widget(form.date, {'attr':{'class':'form-control'}}) }}
+
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label class="col-lg-4 col-form-label" for="v">type<span class="text-success"> :</span>
+            </label>
+
+            <div class="col-lg-7">
+
+
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-4 col-form-label" for="v">Aptitude<span class="text-success"> :</span>
+            </label>
+
+            <div class="col-lg-7">
+                {{ form_widget(form.aptitude, {'attr':{'class':'form-control'}}) }}
+
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-4 col-form-label" for="v">observation<span class="text-success"> :</span>
+            </label>
+
+            <div class="col-lg-7">
+            {{ form_widget(form2.observation, {'attr':{'class':'form-control'}}) }}
+
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-lg-4 col-form-label" for="v">remarque<span class="text-success"> :</span>
+            </label>
+
+            <div class="col-lg-7">
+                {{ form_widget(form2.remarque, {'attr':{'class':'form-control'}}) }}
+
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-lg-4 col-form-label" for="v"> Date  prochaine <span class="text-success"> </span>
+            </label>
+            <div class="col-lg-7">
+                {{ form_widget(form.date_prochaine, {'attr':{'class':'form-control'}}) }}
+
+            </div>
+        </div>
+
+
+
+        <div class="col-lg-10">
+            {{ form_widget(form) }}
+        </div>
+        <div class="col-lg-1.9">
+            {{ form_widget(form2) }}
+        </div>
+    </div>
+
+
+
+    </select>
+</div>
+
+</div>
+</div>
+
+
+</select>
+
+
+
+
+</div>
+<div id="calendar-holder"></div>
+<div class="col-lg-12">
+    <div class="row justify-content-center">
+        <button type="submit" class="btn btn-primary btn-success btn-lg color-block mb-3 mx-auto z-depth-1 btn-rounded"{{ button_label|default('AJOUTER') }}" class="text-white">
+        <i class="fa fa-plus-circle"></i> AJOUTER</button>
+    </div>
+    {{ form_end(form) }}
+</div>
+</div>
+</div>
+</div>

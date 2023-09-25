@@ -1,0 +1,86 @@
+
+
+<div class="wrapper site-min-height">
+    <!-- page start-->
+    <div class="chat-room mt">
+        <div class="col-lg-12">
+            <aside class="mid-side">
+                <div class="chat-room-head">
+                    {{ form_start(form ) }}
+
+
+                    <h2>nouvelle entreprise</h2>
+                </div>
+
+
+
+
+                <div class="group-rom">
+                    <div class="first-part odd">Nom <span class="text-danger">*</span></div>
+                    <div class="second-part"> {{ form_widget(form.nom, {'attr':{'class':'form-control',  'placeholder': "Nom de l'entreprise"}}) }}</div>
+
+                </div>
+
+
+                <div class="group-rom">
+                    <div class="first-part odd">numéro de téléphone <i class="fa fa-phone" aria-hidden="true"></i> <span class="text-danger">*</span></div>
+                    <div class="second-part">  {{ form_widget(form.tel, {'attr':{'class':'form-control',  'placeholder': "numéro de téléphone"}}) }}</div>
+                </div>
+                <div class="group-rom">
+                    <div class="first-part odd">Fax <i class="fa fa-fax" aria-hidden="true"></i></div>
+                    <div class="second-part">  {{ form_widget(form.fax, {'attr':{'class':'form-control',  'placeholder': "numéro de Fax"}}) }}</div>
+
+                </div>
+                <div class="group-rom">
+                    <div class="first-part odd">Email <i class="fa fa-envelope-o" aria-hidden="true"></i> <span class="text-danger">*</span></div>
+                    <div class="second-part">  {{ form_widget(form.email, {'attr':{'class':'form-control',  'placeholder': "Email"}}) }}</div>
+
+                </div>
+                <div class="group-rom">
+                    <div class="first-part odd">Adress <i class="fa fa-map-marker" aria-hidden="true"></i> <span class="text-danger">*</span></div>
+                    <div class="second-part">{{ form_widget(form.adress, {'attr':{'class':'form-control',  'placeholder': "Adress"}}) }}</div>
+                </div>
+
+                <div class="group-rom">
+                    <div class="first-part odd">Personne contact <i class="fa fa-user-circle" aria-hidden="true"></i> <span class="text-danger">*</span></div>
+                    <div class="second-part">  {{ form_widget(form.personne_contact, {'attr':{'class':'form-control',  'placeholder': "personne contact"}}) }}</div>
+                </div>
+
+                <div class="group-rom">
+                    <div class="first-part odd">Num TVA <span class="text-danger">*</span></div>
+                    <div class="second-part">  {{ form_widget(form.num_tva, {'attr':{'class':'form-control',  'placeholder': "num tva"}}) }}</div>
+                </div>
+
+                <div class="group-rom">
+                    <div class="first-part odd">Logo <i class="fa fa-picture-o" aria-hidden="true"></i> <span class="text-danger">*</span></div>
+                    <div class="second-part">  {{ form_widget(form.logo, {'attr':{'class':'form-control'}}) }}</div>
+                </div>
+
+
+
+
+            <div class="group-rom ">
+                <div class="row justify-content-center">
+                    <div class="col-lg-3">
+                        <br>
+                        <button type="submit" class="btn btn-success btn-lg mb-1 mx-auto z-depth-5 btn-rounded " value="{{ button_label|default }}"class= text-white title="Modifier">
+                            <i class="fa fa-check"></i> Ajouter </button>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <button type="button" class="btn btn-danger btn-primary  btn-lg mb-1 mx-auto z-depth-5 btn-rounded ">
+                            <br>
+                            <a href="{{ path('entreprise_index') }}"class= text-white title="Annuler"><i class="fa fa-ban"></i>Annuler </a></button>
+                    </div>
+
+                </div>
+
+            </div>
+            </aside>
+
+        </div>
+    </div>
+</div>
+{{ form_end(form) }}
+
+

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Observation{% endblock %}
+
+{% block body %}
+    <h1>Create new Observation</h1>
+
+    {{ include('observation/_form.html.twig') }}
+
+    <a href="{{ path('observation_index') }}">back to list</a>
+{% endblock %}

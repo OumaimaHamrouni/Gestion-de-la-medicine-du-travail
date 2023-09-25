@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} enquette index{% endblock %}
+
+{% block body %}
+
+
+
+
+    <div class="row mt">
+        <div class="col-md-12">
+
+            <div class="content-panel">
+                <table class="table table-striped table-advance table-hover">
+
+                    <div class="chat-room-head ">
+
+                        <h2><i class="fa fa-angle-right"></i> liste des enquettes </h2>
+
+                        <div class="col-lg-offset-10">
+                            <label> Recherche: </label>
+
+
+                            <form action="#" class="pull-right position">
+                                <input type="text" placeholder="Search" class="form-control search-btn  mb-2 mx-12 z-depth-1 ">
+                            </form>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="col-lg-offset-11">
+                        <button type="button" class="btn btn-primary btn-success btn-lg color-block mb-2 mx-12 z-depth-1 btn-rounded">
+                            <a href="{{ path('enquette_new') }}" ><i class="text-white fa fa-plus">  enquette </i> </a></button>
+                    </div>
+
+                    <thead>
+                    <tr>
+                        <th>Indice</th>
+
+
+
+
+
+
+
+
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for enquette in enquettes %}
+                        <tr>
+
+                        <td>{{ enquette.indice }}</td>
+
+
+
+
+
+
+                        <td>
+                            <div class="row mt">
+
+                                <form class="form-inline" role="form">
+                                    <div class="form-group">
+                                        <button type="button"class="btn btn-theme02">
+
+                                            <a href="{{ path('enquette_show', {'id': enquette.id}) }}" title="Affichier" ><i class="text-white fa fa-info-circle "></i> </a></button>
+
+
+                                    </div>
+                                    <div class="form-group">
+
+                                        <button type="button"class="btn btn-info">
+                                            <a href="{{ path('enquette_edit', {'id': enquette.id}) }}"title="Modifier" ><i class="text-white fa fa-pencil "></i></a></button>
+                                    </div>
+                                    <div class="form-group">
+                                        {{ include('enquette/_delete_form.html.twig') }}
+                                    </div>
+                                </form>
+                            </div>
+                        </td>
+
+
+                    {% else %}
+                        <tr>
+                            <td colspan="9">no records found</td>
+                        </tr>
+                    {% endfor %}
+
+
+                    </tbody>
+                </table>
+
+            </div>
+
+            <!-- /content-panel -->
+        </div>
+        <!-- /col-md-12 -->
+    </div>
+
+{% endblock %}

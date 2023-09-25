@@ -1,0 +1,69 @@
+
+
+
+{% extends 'base.html.twig' %}
+
+{% block title %}risque{% endblock %}
+
+{% block body %}
+
+    <div class="wrapper site-min-height">
+        <!-- page start-->
+        <div class="chat-room mt">
+            <div class="col-lg-offset-2">
+                <aside class="mid-side">
+                    <div class="chat-room-head">
+                        <div class="centered">
+                        <h1>Risque</h1>
+                        </div>
+
+                        <br>
+
+
+                    </div>
+
+
+
+                    <div class="group-rom">
+                        <div class="first-part odd">id</div>
+                        <div class="second-part">{{ risque.id }}</div>
+
+                    </div>
+
+                    <div class="group-rom">
+                        <div class="first-part odd">type<i class="fa fa-calculator" aria-hidden="true"></i></div>
+                        <div class="second-part">{{ risque.type }}</div>
+                    </div>
+
+                    <div class="group-rom">
+                        <div class="first-part odd">Description</div>
+                        <div class="second-part">{{risque.description }}</div>
+
+                    </div>
+
+
+
+
+
+                    <div class="form-group">
+                        <div class="pull-right col-lg-4">
+                            <br> <br> <br> <br>
+                            <button type="button" class="btn btn-primary  btn-dark btn-lg color-block mb-1 mx-auto z-depth-1 btn-rounded ">
+                                <a href="{{ path('risque_index') }}" class="text-white" title="retour à la liste"><i class="fa fa-reply"></i> Retour à la liste</a></button>
+
+                        </div>
+
+                    </div>
+
+
+                </aside>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+

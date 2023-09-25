@@ -1,0 +1,150 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dossier medical{% endblock %}
+
+{% block body %}
+
+    <div class="wrapper site-min-height">
+        <!-- page start-->
+        <div class="chat-room mt">
+            <div class="col-lg-12">
+                <aside class="mid-side">
+                    <div class="chat-room-head">
+<br>
+                        <div class="centered">
+                        <h1>Dossier Médical </h1>
+                        </div>
+                        <div class="col-md-4 centered">
+                            <div class="profile-pic">
+                                <p><img src="{{ asset('uploads/images/' ~ dossier_medical.ids.getphoto) }}"></p>
+
+
+
+                            </div>
+                        </div>
+                        <div class="group-row">
+                            <div class="pull-right">
+                                <div class="dropdown">
+                                    <button class="btn btn-theme02 dropdown-toggle btn-lg" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                       choisir une action
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item"  href="{{ path('visite_newP') }}">consultation périodique</a>
+                                        <a class="dropdown-item" href="{{ path('visite_newR') }}">visite de reprise</a>
+                                        <button class="btn btn-default" onclick="window.print();"> imprimer  <i class="fa fa-print"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                    </div>
+
+
+
+
+
+
+                    <div class="group-rom">
+                        <div class="first-part odd">id</div>
+                        <div class="second-part">{{ dossier_medical.id }}</div>
+
+                    </div>
+
+                    <div class="group-rom">
+                        <div class="first-part odd">Matricule</div>
+                        <div class="second-part">{{ dossier_medical.ids.getMatricule }}</div>
+
+                    </div>
+
+                    <div class="group-rom">
+                        <div class="first-part odd">Nom</div>
+                        <div class="second-part">{{ dossier_medical.ids.getNom }}</div>
+
+                    </div>
+
+                    <div class="group-rom">
+                        <div class="first-part odd">Prenom</div>
+                        <div class="second-part">{{ dossier_medical.ids.getPrenom }}</div>
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">Genre</div>
+                        <div class="second-part">{{ dossier_medical.ids.getGenre }}</div>
+                    </div>
+                        <div class="group-rom">
+                            <div class="first-part odd">Date de naissance</div>
+                            <div class="second-part">{{ dossier_medical.ids.dateDeNaissance ? dossier_medical.ids.dateDeNaissance|date('Y-m-d') : '' }}</div>
+
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">poste </div>
+                        <div class="second-part">{{ dossier_medical.ids.getIDPT.getNom }}</div>
+                    </div>
+
+                    <div class="group-rom">
+                        <div class="first-part odd">Allergie  </div>
+                        <div class="second-part">{{ dossier_medical.allergies }}</div>
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">Description Allergies </div>
+                        <div class="second-part">{{ dossier_medical.descriptionAllergies }}</div>
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd"> Vaccinin </div>
+                        <div class="second-part">{{ dossier_medical.allergies }}</div>
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">Description </div>
+                        <div class="second-part"> {{ dossier_medical.descriptionVaccinin }}</div>
+                    </div>
+
+                    <div class="group-rom">
+                        <div class="first-part odd">Poids</div>
+                        <div class="second-part"> {{ dossier_medical.poids}}</div>
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">Taille</div>
+                        <div class="second-part"> {{ dossier_medical.taille}}</div>
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">abitude</div>
+                        <div class="second-part"> {{ dossier_medical.habitude}}</div>
+                    </div>
+
+                    <div class="group-rom">
+                        <div class="first-part odd">Tratitements Longues Duree</div>
+                        <div class="second-part"> {{ dossier_medical.tratitementsLonguesDuree }}</div>
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">Frequence</div>
+                        <div class="second-part"> {{ dossier_medical.frequence }}</div>
+                    </div>
+
+                    <div class="group-rom ">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-3">
+                                <br>
+                                {{ include('dossier_medical/_delete_form.html.twig') }}
+
+
+                            </div>
+
+                            <div class="col-lg-3">
+                                <br>
+                                <button type="button" class="btn btn-dark btn-primary  btn-lg mb-1 mx-auto z-depth-5 btn-rounded ">
+                                    <a href="{{ path('dossier_medical_index') }}"class= text-white title="retour a la liste"><i class="fa fa-reply"></i> Retour a la liste </a></button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+

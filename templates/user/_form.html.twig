@@ -1,0 +1,125 @@
+
+<div class="wrapper site-min-height">
+    <!-- page start-->
+    <div class="chat-room mt">
+        <div class="col-lg-12">
+            <aside class="mid-side">
+                <div class="chat-room-head">
+                    {{ form_start(form2  , {'action': path('admin_new')}) }}
+
+                    <h2>nouveau responsable</h2>
+                </div>
+
+
+                <div class="group-rom">
+                    <div class="first-part odd">user_name <i class="fa fa-user" aria-hidden="true"></i> <span class="text-danger">*</span> </div>
+                    <div class="second-part">{{ form_widget(form2.username, {'attr':{'class':'form-control','placeholder': "user name"}}) }}</div>
+
+                </div>
+
+                <div class="group-rom">
+                    <div class="first-part odd">Email <img src="https://img.icons8.com/ios-filled/50/000000/email.png" height="15"/> <span class="text-danger">*</span> </div>
+                    <div class="second-part">{{ form_widget(form2.email, {'attr':{'class':'form-control','placeholder': "Email"}}) }}</div>
+
+                </div>
+
+                <div class="group-rom">
+                    <div class="first-part odd">Nom <span class="text-danger">*</span></div>
+                    <div class="second-part"> {{ form_widget(form2.nom, {'attr':{'class':'form-control','placeholder': " Nom "}}) }}</div>
+
+                </div>
+
+                <div class="group-rom">
+                    <div class="first-part odd">Prenom <span class="text-danger">*</span></div>
+                    <div class="second-part">  {{ form_widget(form2.prenom, {'attr':{'class':'form-control','placeholder': "Prenom"}}) }}</div>
+
+                </div>
+                <div class="group-rom">
+                    <div class="first-part odd">numéro de téléphone <i class="fa fa-phone" aria-hidden="true"></i> <span class="text-danger">*</span></div>
+                    <div class="second-part">  {{ form_widget(form2.tel, {'attr':{'class':'form-control','placeholder': "numero de téléphone"}}) }}</div>
+                </div>
+
+                <div class="group-rom">
+                    <div class="first-part odd">Adress  <i class="fa fa-home" aria-hidden="true"></i> <span class="text-danger">*</span></div>
+                    <div class="second-part">{{ form_widget(form2.adress, {'attr':{'class':'form-control','placeholder': "Adress"}}) }}</div>
+                </div>
+                <div class="group-rom">
+                    <div class="first-part odd">Date de naissance  <i class="fa fa-birthday-cake" aria-hidden="true"></i> <span class="text-danger">*</span></div>
+                    <div class="second-part">  {{ form_widget(form2.date_de_naissance, {'attr':{'class':'form-control'}}) }}</div>
+                </div>
+
+
+                <div class="group-rom">
+                    <div class="first-part odd">Photo <i class="fa fa-picture-o" aria-hidden="true"></i> <span class="text-danger">*</span></div>
+                    <div class="form-group last">
+                        <div class="col-md-9">
+                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                    <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="">
+                                </div>
+                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                <div>
+
+                                    <input type="file" class="default" {{ form_widget(form2.photo, {'attr':{'class':'form-control'}}) }}
+                                    <span class="label label-info">NOTE!</span>
+                                    <span>  Attached image thumbnail is supported</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="group-rom">
+                    <div class="first-part odd">Mot de passe <i class="fa fa-key" aria-hidden="true"></i> <span class="text-danger">*</span><br>Mot de passe confirmer<span class="text-danger"> *</span></div>
+                    <div class="second-part">{{ form_widget(form2.plainPassword) }}</div>
+                </div>
+                <div class="group-rom ">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-3">
+                            <button type="submit" class="btn btn-success btn-lg mb-1 mx-auto z-depth-5 btn-rounded " value="{{ button_label|default }}"class= text-white title="Modifier">
+                                <i class="fa fa-check"></i> Ajouter </button>
+
+
+
+
+                        </div>
+
+                        <div class="col-lg-3">
+                            <button type="button" class="btn btn-danger btn-primary  btn-lg mb-1 mx-auto z-depth-5 btn-rounded ">
+                                <a href="{{ path('admin_index') }}"class= text-white title="Annuler"><i class="fa fa-ban"></i>Annuler </a></button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </aside>
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+</div>
+</div>
+
+
+
+
+
+
+</div>
+
+{{ form_end(form2) }}
+</div>
+</div>
+</div>
+</div>

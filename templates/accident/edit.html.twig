@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Accident{% endblock %}
+
+{% block body %}
+
+
+
+    <div class="wrapper site-min-height">
+        <!-- page start-->
+        <div class="chat-room mt">
+            <div class="col-lg-12">
+                <aside class="mid-side">
+                    <div class="chat-room-head">
+
+                        {{ form_start(form  , {'action': path('accident_edit', {'id': accident.id})}) }}
+
+                        <h1>Edit Accident</h1>
+
+
+
+                    </div>
+
+
+                    <div class="group-rom">
+                        <div class="first-part odd">Refrence</div>
+                        <div class="second-part"> {{ form_widget(form.ref, {'attr':{'class':'form-control'}}) }}</div>
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">date heure de l'accident   <i class="fa fa-calculator" aria-hidden="true"></i></div>
+                        <div class="second-part">  {{ form_widget(form.dateheure_accident, {'attr':{'class':'form-control'}}) }}</div>
+                    </div>
+
+                    <div class="group-rom">
+                        <div class="first-part odd">lieu <i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                        <div class="second-part">  {{ form_widget(form.lieu, {'attr':{'class':'form-control'}}) }}</div>
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">etablissement  <i class="fa fa-home" aria-hidden="true"></i></div>
+                        <div class="second-part">{{ form_widget(form.etablissement, {'attr':{'class':'form-control'}}) }}</div>
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">Cause <i class="fa fa-exclamation-circle" aria-hidden="true"></i></div>
+                        <div class="second-part">  {{ form_widget(form.cause, {'attr':{'class':'form-control'}}) }}</div>
+
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part odd">Description <i class="fa fa-file-text-o" aria-hidden="true"></i></div>
+                        <div class="second-part">  {{ form_widget(form.description, {'attr':{'class':'form-control'}}) }}</div>
+
+                    </div>
+
+
+                    <div class="group-rom">
+                        <div class="first-part odd">n_travailleurs <i class="fa fa-users" aria-hidden="true"></i></div>
+                        <div class="second-part">  {{ form_widget(form.n_travailleurs, {'attr':{'class':'form-control'}}) }}</div>
+                    </div>
+
+
+                    <div class="row justify-content-center">
+                        <br>
+                        <br>
+                        <div class="col-lg-3">
+
+                            <button type="submit" class="btn btn-info btn-lg mb-1 mx-auto z-depth-5 btn-rounded "class= text-white title="Modifier"><i class="fa fa-check"></i> {{ button_label|default('Modifier') }}</button>
+                        <button type="button" class="btn btn-danger btn-primary  btn-lg mb-1 mx-auto z-depth-5 btn-rounded ">
+                            <a href="{{ path('accident_index') }}"class= text-white title="Annuler"><i class="fa fa-ban"></i> Annuler </a></button>
+                    </div>
+
+
+                </aside>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    {{ form_end(form) }}
+{% endblock %}
